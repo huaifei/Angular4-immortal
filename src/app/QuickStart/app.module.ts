@@ -7,19 +7,24 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { MembersComponent } from './members/members.component';
+import { DirectiveComponent } from './directives/directive.component';
+
+import { HighlightDirective } from './directives/cases/d1';
 
 import { MemberService } from './services/member.service';
 
 export const ROUTE: Routes  = [
   { path: '', pathMatch: 'full', redirectTo: 'user' },
   { path: 'user', component: UserComponent },
-  { path: 'members', component: MembersComponent }
+  { path: 'members', component: MembersComponent },
+  { path: 'directives', component: DirectiveComponent }
 ];
 
 
 @NgModule({
   declarations: [
-    AppComponent, UserComponent, MembersComponent
+    AppComponent, UserComponent, MembersComponent, DirectiveComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
